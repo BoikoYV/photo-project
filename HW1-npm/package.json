@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "Boiko Yulia, FE-1",
   "main": "app.js",
-  "repository": "gitlab:https://gitlab.com/yuliaboiko/fe-1-hw/-/tree/main/HW1-npm",
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.com/yuliaboiko/fe-1-hw/-/tree/main/HW1-npm"
+  },
   "scripts": {
     "start": "node app.js"
   },
