@@ -1,0 +1,21 @@
+{
+  "name": "project-x",
+  "version": "1.0.0",
+  "description": "Boiko Yulia, FE-1",
+  "main": "app.js",
+  "repository": "gitlab:user/repo",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "Boiko Yulia",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.26.14",
+    "eslint": "^7.28.0",
+    "gulp": "^4.0.2"
+  },
+  "dependencies": {
+    "bootstrap": "^5.0.1",
+    "moment": "^2.29.1"
+  }
+}
