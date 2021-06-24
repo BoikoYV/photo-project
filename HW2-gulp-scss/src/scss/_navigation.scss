@@ -1,0 +1,127 @@
+// Позиционирование навигации
+.header__nav {
+   margin: 28px 0 34px;
+}
+
+
+// Меню список
+.menu {
+   display: flex;
+   justify-content: space-between;
+   padding: 0 179px;
+
+   @media (max-width: 900px) {
+      padding: 0 75px;
+   }
+   @media (max-width: 650px) {
+      padding: 0 35px;
+   }
+   @media (max-width: 550px) {
+      //  меню скрыто
+      & {
+         position: absolute;
+         right: 28px;
+         top: 37px;
+         flex-direction: column;
+         background-color: rgb(245, 245, 245);
+         transform: translateY(-500px);
+         opacity: 0;
+         transition: transform .4s, opacity 1s;
+      }
+      // меню выпало
+      &--open {
+         transform: translateY(0);
+         opacity: 1;
+         transition: transform .4s, opacity 1s;
+      }
+    
+   }
+}
+
+// Ссылки в меню
+.menu__link {
+   display: block;
+   padding: 15px 0;
+   font-size: 11px;
+   line-height: 22px;
+   text-transform: uppercase;
+   color: $main-color;
+   transition: color 0.3s;
+
+   &--home {
+      color: rgba(87, 164, 164, 1);
+   }
+
+   &:hover {
+      color: rgba(9, 214, 195, 1);
+   }
+   @media (max-width: 550px) {
+      padding: 4px 0;
+   }
+}
+
+// Кнопка бургер
+.burger {
+   width: 44px;
+   height: 37px;
+   background-color: #000;
+   position: absolute;
+   right: 28px;
+   cursor: pointer;
+   display: none;
+
+   @media (max-width: 550px) {
+      & {
+         display: block;
+      }
+   }
+}
+
+// Линий бургера
+.burger__line {
+   position: absolute;
+   top: 17px;
+   left: 13px;
+   width: 17px;
+   height: 2px;
+   background-color: #fff;
+   transition: transform 0.4s;
+
+   // 3 полоски бургера
+   &::before {
+      background-color: #fff;
+      top: -4px;
+      left: 0;
+      @include pseudo-el(17px, 2px);
+      transition: transform 0.2s;
+   }
+
+   &::after {
+      background-color: #fff;
+      top: 4px;
+      left: 0;
+      @include pseudo-el(17px, 2px);
+      transition: transform 0.2s;
+   }
+
+   // крестик
+   &--open {
+      transition: transform 0.4s;
+      background-color: transparent;
+      transform: rotate(90deg);
+   }
+
+   &--open::before {
+      transform: rotate(45deg);
+      top: 0;
+      left: 0;
+      transition: transform 0.2s;
+   }
+
+   &--open::after {
+      transform: rotate(-45deg);
+      top: 0;
+      left: 0;
+      transition: transform 0.2s;
+   }
+}

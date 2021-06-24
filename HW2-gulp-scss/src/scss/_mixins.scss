@@ -1,0 +1,7 @@
+// Базовые свойства псевдоэлементов
+@mixin pseudo-el ($width, $height) {
+   position: absolute;
+   content: "";
+   width: $width;
+   height: $height;
+}
