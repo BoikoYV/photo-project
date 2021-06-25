@@ -5,3 +5,19 @@
    width: $width;
    height: $height;
 }
+
+// Оформление заголовков
+@mixin section-title($color) {
+   font-weight: 700;
+   text-transform: uppercase;
+   position: relative;
+   color: $color;
+   padding-left: 10px;
+
+   &::before{
+      @include pseudo-el(5px, 2px);
+      background-color: $color;
+      top: 45%;
+      left: 0;
+   }
+}

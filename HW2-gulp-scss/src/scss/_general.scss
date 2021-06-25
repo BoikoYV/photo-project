@@ -5,8 +5,11 @@ body {
    font-family: "Roboto", "Arial", sans-serif;
    color: $main-color;
 }
+
+//контейнер увеличин на ширину падингов для моб. версии 
 .container {
-   max-width: 1170px;
+   max-width: 1226px;
+   padding: 0 28px;
    margin: 0 auto;
    position: relative;
 }

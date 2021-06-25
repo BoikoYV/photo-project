@@ -12,6 +12,7 @@
 <body class="page">
    <header class="page__header header">
       <div class="container">
+
          <nav class="header__nav nav">
             <button class="burger">
                <span class="burger__line"></span>
@@ -54,14 +55,66 @@
                </li>
             </ul>
          </nav>
-         
-         <!-- Фоновая картинка -->
-         <!-- <picture>
-            <source srcset="./dist/img/header-big.jpg" media="(min-width: 768px)">
-            <img src="./dist/img/header-big.jpg" alt="railway station">
-         </picture> -->
+         <picture>
+            <source srcset="./dist/img/header-big.jpg" type="image/jpeg" media="(min-width: 768px)">
+            <source srcset="./dist/img/header-mid.jpg" type="image/jpeg" media="(min-width: 320px)">
+            <source srcset="./dist/img/header-sm.jpg" type="image/jpeg" media="(max-width: 768px)">
+            <img class="header-bg" src="./dist/img/header-big.jpg" alt="railway station">
+         </picture>
+
       </div>
    </header>
+
+   <main>
+      <section class="page__posts posts">
+         <div class="container">
+            <h2 class="posts__title">Our recent posts</h2>
+            <ul class="posts__list">
+               <li class="posts__item post">
+                  <a class="post__link" href="#">
+                     <img class="post__img" src="./dist/img/post1.jpg" alt="photo" width="160" height="140">
+                     <div class="post__info">
+                        <h3 class="post__subtitle">Aenean Adipiscing Etiam Vestibulum</h3>
+                        <p class="post__details">Photography, Journal <span class="post__comment">9 Comments</span></p>
+                        <p class="post__text">Etiam porta sem malesuada euismod. Aenean leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
+                     </div>
+                  </a>
+               </li>
+               <li class="posts__item post">
+                  <a class="post__link" href="#">
+                     <img class="post__img" src="./dist/img/post2.jpg" alt="photo" width="160" height="140">
+                     <div class="post__info">
+                        <h3 class="post__subtitle">Aenean Adipiscing Etiam Vestibulum</h3>
+                        <p class="post__details">Photography, Journal <span class="post__comment">9 Comments</span></p>
+                        <p class="post__text">Etiam porta sem malesuada euismod. Aenean leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
+                     </div>
+                  </a>
+               </li>
+               <li class="posts__item post">
+                  <a class="post__link" href="#">
+                     <img class="post__img" src="./dist/img/post3.jpg" alt="photo" width="160" height="140">
+                     <div class="post__info">
+                        <h3 class="post__subtitle">Aenean Adipiscing Etiam Vestibulum</h3>
+                        <p class="post__details">Photography, Journal <span class="post__comment">9 Comments</span></p>
+                        <p class="post__text">Etiam porta sem malesuada euismod. Aenean leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
+                     </div>
+                  </a>
+               </li>
+               <li class="posts__item post">
+                  <a class="post__link" href="#">
+                     <img class="post__img" src="./dist/img/post4.jpg" alt="photo" width="160" height="140">
+                     <div class="post__info">
+                        <h3 class="post__subtitle">Aenean Adipiscing Etiam Vestibulum</h3>
+                        <p class="post__details">Photography, Journal <span class="post__comment">9 Comments</span></p>
+                        <p class="post__text">Etiam porta sem malesuada euismod. Aenean leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
+                     </div>
+                  </a>
+               </li>
+            </ul>
+         </div>
+
+      </section>
+   </main>
 
 
    <script src="dist/js/script.min.js"></script>
