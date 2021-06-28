@@ -28,4 +28,12 @@
 
 .page__posts{
    margin-bottom: 70px;
+
+   @media (max-width: 768px) {
+      margin-bottom: 60px;
+   }
+   @media (max-width: 390px) {
+      margin-bottom: 43px;
+   }
 }
+

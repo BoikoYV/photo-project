@@ -1,23 +1,58 @@
 // Базовые свойства псевдоэлементов
-@mixin pseudo-el ($width, $height) {
+@mixin pseudo-el($width, $height) {
    position: absolute;
    content: "";
    width: $width;
    height: $height;
 }
 
-// Оформление заголовков
-@mixin section-title($color) {
+// Оформление заголовков с черточками
+@mixin section-title($color, $pseudo-place: "before") {
+   // Свойства заголовков
    font-weight: 700;
    text-transform: uppercase;
    position: relative;
    color: $color;
-   padding-left: 10px;
-
-   &::before{
-      @include pseudo-el(5px, 2px);
+   display: inline-block;
+   // Фон псевдоэлементов и расположение по оси Y
+   &::before,
+   &::after {
       background-color: $color;
       top: 45%;
-      left: 0;
+   }
+
+   // Псевдоэлемент до
+   @if ($pseudo-place == "before") {
+      padding-left: 10px;
+
+      &::before {
+         @include pseudo-el(5px, 2px);
+         left: 0;
+      }
+
+   // Псевдоэлемент после
+   } @else if ($pseudo-place == "after") {
+      padding-right: 10px;
+
+      &::after {
+         @include pseudo-el(5px, 2px);
+         right: 0;
+      }
+
+   // Псевдоэлемент с двух сторон
+   } @else if($pseudo-place == "both") {
+      padding-left: 10px;
+      padding-right: 10px;
+      
+
+      &::before {
+         @include pseudo-el(5px, 2px);
+         left: 0;
+      }
+      
+      &::after {
+         @include pseudo-el(5px, 2px);
+         right: 0;
+      }
    }
 }

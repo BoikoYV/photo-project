@@ -1,6 +1,6 @@
-.post{
+.post {
    @media (max-width: 470px) {
-      &:nth-child(4){
+      &:nth-child(4) {
          display: none;
       }
    }
@@ -9,6 +9,10 @@
    @include section-title($main-color);
    line-height: 22px;
    margin-bottom: 24px;
+   
+   @media (max-width: 590px) {
+      font-size: 14px;
+   }
 }
 .posts__list {
    display: grid;
@@ -31,7 +35,7 @@
 .post__img {
    margin-right: 19px;
 
-   @media (max-width: 506px) {
+   @media (max-width: 470px) {
       margin-bottom: 12px;
    }
 }
@@ -42,7 +46,7 @@
    font-weight: 700;
    line-height: 30px;
 
-   @media (max-width: 506px) {
+   @media (max-width: 590px) {
       font-size: 14px;
    }
 }
@@ -51,14 +55,14 @@
    color: $subtitle-color;
    margin-bottom: 6px;
 
-   @media (max-width: 506px) {
+   @media (max-width: 590px) {
       font-size: 11px;
    }
 }
 .post__comment {
    margin-left: 23px;
    position: relative;
-   
+
    &::before {
       content: "/";
       position: absolute;
@@ -70,7 +74,7 @@
    line-height: 26px;
    color: rgb(92, 92, 92);
 
-   @media (max-width: 506px) {
+   @media (max-width: 590px) {
       font-size: 13px;
    }
    @media (max-width: 470px) {

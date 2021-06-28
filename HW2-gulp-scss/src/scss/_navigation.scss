@@ -1,5 +1,3 @@
-
-
 // Меню список
 .menu {
    display: flex;
@@ -13,25 +11,26 @@
       padding: 0 35px;
    }
    @media (max-width: 550px) {
+      min-width: 182px;
       //  меню скрыто
       & {
          position: absolute;
-         right: 28px;
+         right: 15px;
          top: 37px;
          flex-direction: column;
          background-color: rgb(245, 245, 245);
          transform: translateY(-500px);
          opacity: 0;
-         transition: transform .4s, opacity 1s;
+         transition: transform 0.4s, opacity 1s;
+         padding: 0;
       }
       // меню выпало
       &--open {
          transform: translateY(0);
          opacity: 1;
-         transition: transform .4s, opacity 1s;
+         transition: transform 0.4s, opacity 1s;
          z-index: 2;
       }
-    
    }
 }
 
@@ -45,15 +44,23 @@
    color: $main-color;
    transition: color 0.3s;
 
-   &--home {
+   &--active {
       color: rgba(87, 164, 164, 1);
    }
-
-   &:hover {
-      color: rgba(9, 214, 195, 1);
+   @media (min-width: 551px){
+      &:hover {
+         color: rgb(9, 231, 209);
+      }
    }
+   
    @media (max-width: 550px) {
+      display: block;
       padding: 4px 0;
+      padding-left: 12px;
+
+      &:hover {
+         background-color: rgb(229, 229, 229);
+      }
    }
 }
 
@@ -63,7 +70,7 @@
    height: 37px;
    background-color: #000;
    position: absolute;
-   right: 28px;
+   right: 15px;
    cursor: pointer;
    display: none;
 
@@ -85,20 +92,21 @@
    transition: transform 0.4s;
 
    // 3 полоски бургера
-   &::before {
+   &::before,
+   &::after {
       background-color: #fff;
-      top: -4px;
-      left: 0;
-      @include pseudo-el(17px, 2px);
       transition: transform 0.2s;
+      left: 0;
+
+      @include pseudo-el(17px, 2px);
+   }
+
+   &::before {
+      top: -4px;
    }
 
    &::after {
-      background-color: #fff;
       top: 4px;
-      left: 0;
-      @include pseudo-el(17px, 2px);
-      transition: transform 0.2s;
    }
 
    // крестик
@@ -108,17 +116,18 @@
       transform: rotate(90deg);
    }
 
-   &--open::before {
-      transform: rotate(45deg);
+   &--open::before,
+   &--open::after {
       top: 0;
       left: 0;
       transition: transform 0.2s;
    }
 
+   &--open::before {
+      transform: rotate(45deg);
+   }
+
    &--open::after {
       transform: rotate(-45deg);
-      top: 0;
-      left: 0;
-      transition: transform 0.2s;
    }
 }
