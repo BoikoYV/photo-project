@@ -1,7 +1,7 @@
 const { src, dest, watch, series, parallel} = require('gulp'); 
 // Общие плагины
 const sourcemaps   = require('gulp-sourcemaps');        //source maps для дебага миниф.кода
-const concat       = require('gulp-concat');            //объединение файлов(именование)    
+const concat       = require('gulp-concat');            //объединение файлов  
 const browserSync  = require('browser-sync').create();  //browserSync
 const del          = require('del');                    //удаление папок/файлов
 const rename       = require('gulp-rename');            //переименование
@@ -112,5 +112,5 @@ exports.cleanDist         = cleanDist;
 exports.compressImgs      = compressImgs;
 
 
-exports.dev       = parallel(compilStylesDev, scriptsDev, browserChanges, startWatch);              //Для дев версия
-exports.build     = series(cleanDist, compilStylesProd, scriptsProd, compressImgs, convertFonts);   //Для прод версии
+exports.dev       = parallel(compilStylesDev, scriptsDev, compressImgs, convertFonts, browserChanges, startWatch);    //Для дев версия
+exports.build     = series(cleanDist, compilStylesProd, scriptsProd, compressImgs, convertFonts);                     //Для прод версии

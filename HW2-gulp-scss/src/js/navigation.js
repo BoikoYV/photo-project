@@ -9,4 +9,5 @@
       this.children[0].classList.toggle('burger__line--open');
       menuList.classList.toggle('menu--open');
    })
-})()
+   
+})();
