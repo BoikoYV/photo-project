@@ -11,7 +11,8 @@ const sass         = require('gulp-sass');              //SCSS компилят�
 const autoprefixer = require('gulp-autoprefixer');      //вендорные префиксы
 const cleancss     = require('gulp-clean-css');         //минификация стилей
 const purgecss     = require('gulp-purgecss')           //удаление неиспользуемого кода
-const fonts        = require('gulp-ttf2woff2');         //конвертирование шрифтов
+const ttfToWoff2   = require('gulp-ttf2woff2');         //конвертирование шрифтов в woff2
+const ttfToWoff    = require('gulp-ttf2woff');          //конвертирование шрифтов в woff
 // Изображения
 const imageMin     = require('gulp-imagemin');          //сжатие картинок
 // Скрипты
@@ -21,11 +22,14 @@ const uglify       = require('gulp-uglify-es').default; //сжатие js
 
 // Конвертирование шрифтов
 function convertFonts() {
-   return src('src/fonts/*.ttf')
-      .pipe(newer('dist/fonts/'))
-      .pipe(fonts())
-      .pipe(dest('dist/fonts/'))
-      .pipe(browserSync.stream()) 
+   src('src/fonts/*.ttf')
+   .pipe(ttfToWoff2())
+   .pipe(dest('dist/fonts/'))
+
+return src('src/fonts/*.ttf')
+   .pipe(ttfToWoff())
+   .pipe(dest('dist/fonts/'))
+
 }
 
 // Манипуляция с SCSS для дев версии с sourcemaps
