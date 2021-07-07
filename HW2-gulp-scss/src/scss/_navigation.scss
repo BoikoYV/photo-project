@@ -10,7 +10,7 @@
    @media (max-width: 650px) {
       padding: 0 35px;
    }
-   @media (max-width: 550px) {
+   @media (max-width: 768px) {
       min-width: 182px;
       //  меню скрыто
       & {
@@ -47,13 +47,13 @@
    &--active {
       color: rgba(87, 164, 164, 1);
    }
-   @media (min-width: 551px){
+   @media (min-width: 551px) {
       &:hover {
          color: rgb(9, 231, 209);
       }
    }
-   
-   @media (max-width: 550px) {
+
+   @media (max-width: 768px) {
       display: block;
       padding: 4px 0;
       padding-left: 12px;
@@ -74,7 +74,7 @@
    cursor: pointer;
    display: none;
 
-   @media (max-width: 550px) {
+   @media (max-width: 768px) {
       & {
          display: block;
       }

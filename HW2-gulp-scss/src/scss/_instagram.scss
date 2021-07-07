@@ -31,7 +31,7 @@
    @include section-title($main-color, "after");
    font-size: 13px;
 
-   @media (max-width: 655px) {
+   @media (max-width: 768px) {
       display: none;
    }
 }
